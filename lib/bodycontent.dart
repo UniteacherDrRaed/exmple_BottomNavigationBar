@@ -19,11 +19,13 @@ Widget getWidget(BuildContext context,int i){
          ),
          ElevatedButton(onPressed: ()
          {
-          _contextOfText=t1.text;
+          ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(
+            content: Text(t1.text),
+          backgroundColor: Colors.blue,));
          }, 
-         child: Text("click here"))
-         ,
-         Text(t1.text)]
+         child: const Text("click here"))
+        ]
        ),
        );
      
@@ -33,13 +35,47 @@ Widget getWidget(BuildContext context,int i){
    return Container(
     margin:const EdgeInsets.all(24),
     color: Colors.yellow,
-    height: 275,);
+    height: 275,
+    child:Column(
+         children:[ TextField(
+          
+          controller: t2,
+          
+         ),
+         ElevatedButton(onPressed: ()
+         {
+          ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(
+            content: Text(t2.text),
+          backgroundColor: Colors.yellow,));
+         }, 
+         child: const Text("click here"))
+        ]
+       ),
+      );
  }
 
 else{
   return Container(
     margin:const EdgeInsets.all(24),
     color: Colors.green,
-    height: 275,);
+    height: 275,
+    child:Column(
+         children:[ TextField(
+          
+          controller: t3,
+          
+         ),
+         ElevatedButton(onPressed: ()
+         {
+          ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(
+            content: Text(t3.text),
+          backgroundColor: Colors.green,));
+         }, 
+         child: const Text("click here"))
+        ]
+       ),
+      );
 }
 }
